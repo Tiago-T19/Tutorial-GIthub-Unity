@@ -10,15 +10,16 @@ public class CameraFollow : MonoBehaviour
 
     void Update()
     {
-        // ROTACION
+       // ROTACION
         float x = Input.GetAxisRaw("Mouse X"); // Con el Mouse
         player.Rotate(0f, x * sensibility, 0f, Space.Self); // Rota en y
-        transform.LookAt(player); // Sigue al jugador
+        transform.LookAt(player); // Sigue al jugador 
+       
     }
 
     private void LateUpdate()
     {
         // Seguimiento de la CAMARA
-        transform.position = player.position + player.rotation * offset;
+        transform.position = player.position + player.rotation* offset;
     }
 }
